@@ -1,0 +1,8 @@
+item,loss_or_allowance_dB,kind
+Tx package,2.0,physical path allocation
+PCB / channel,10.0,physical path allocation
+Vias / connectors,2.0,physical path allocation
+Rx package,2.0,physical path allocation
+Allocated path total,16.0,sum of physical allocations
+Reserve,4.0,"unused allowance, not attenuation"
+Total budget,20.0,hypothetical limit

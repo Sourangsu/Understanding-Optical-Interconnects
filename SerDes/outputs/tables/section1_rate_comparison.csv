@@ -1,0 +1,3 @@
+format,transmitted_Gbps,bits_per_symbol,symbol_rate_Gbaud,symbol_period_ps,nyquist_reference_GHz
+NRZ,100.0,1.0,100.0,10.0,50.0
+PAM4,100.0,2.0,50.0,20.0,25.0

@@ -1,0 +1,10 @@
+quantity,value,unit
+Allocated operating power per lane,1.0,W
+Transmitted rate per lane,100.0,Gb/s
+Energy per transmitted bit,10.0,pJ/bit
+Number of simultaneous lanes,32,lanes
+Aggregate transmitted rate,3.2,Tb/s
+Combined operating-power allocation,32.0,W
+Assumed energy reduction,2.0,pJ/bit
+Calculated saving per lane,0.19999999999999998,W
+Calculated saving across all lanes,6.3999999999999995,W

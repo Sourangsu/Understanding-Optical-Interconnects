@@ -1,0 +1,318 @@
+{
+  "article": "Understanding Optical Interconnects: SerDes and the Electrical Channel",
+  "runtime_versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "matplotlib": "3.9.2",
+    "ipython": "8.27.0",
+    "ipykernel": "6.28.0",
+    "numba": "0.60.0"
+  },
+  "dfe_engine": "Numba acceleration",
+  "section1_rate_comparison": [
+    {
+      "format": "NRZ",
+      "transmitted_Gbps": 100.0,
+      "bits_per_symbol": 1.0,
+      "symbol_rate_Gbaud": 100.0,
+      "symbol_period_ps": 10.0,
+      "nyquist_reference_GHz": 50.0
+    },
+    {
+      "format": "PAM4",
+      "transmitted_Gbps": 100.0,
+      "bits_per_symbol": 2.0,
+      "symbol_rate_Gbaud": 50.0,
+      "symbol_period_ps": 20.0,
+      "nyquist_reference_GHz": 25.0
+    }
+  ],
+  "section2": {
+    "a": 0.4,
+    "initial_previous_symbol": -1.0,
+    "loss_example_dB": 12.0,
+    "loss_example_amplitude_ratio": 0.251188643150958,
+    "minimum_threshold_distance": 0.6
+  },
+  "section3": {
+    "reference_frequency_GHz": 25.0,
+    "total_budget_dB": 20.0,
+    "path_loss_dB": 16.0,
+    "reserve_dB": 4.0,
+    "revised_path_loss_dB": 18.0,
+    "revised_reserve_dB": 2.0,
+    "timing_normalization": [
+      {
+        "symbol_rate_Gbaud": 50.0,
+        "UI_ps": 20.0,
+        "timing_ps": 5.0,
+        "timing_UI": 0.25
+      },
+      {
+        "symbol_rate_Gbaud": 100.0,
+        "UI_ps": 10.0,
+        "timing_ps": 5.0,
+        "timing_UI": 0.5
+      }
+    ]
+  },
+  "section4_inverse_gain_comparison": [
+    {
+      "channel": "A",
+      "frequency_GHz": 15.0,
+      "insertion_loss_dB": 10.0,
+      "magnitude": 0.31622776601683794,
+      "inverse_amplitude_gain": 3.162277660168379,
+      "noise_PSD_multiplier": 9.999999999999998
+    },
+    {
+      "channel": "B",
+      "frequency_GHz": 15.0,
+      "insertion_loss_dB": 30.0,
+      "magnitude": 0.03162277660168379,
+      "inverse_amplitude_gain": 31.622776601683796,
+      "noise_PSD_multiplier": 1000.0000000000002
+    }
+  ],
+  "section5": {
+    "a": 0.4,
+    "sigma": 0.3,
+    "seed": 1,
+    "scored_bits": 2000000,
+    "warmup_symbols": 2000,
+    "random_bit_generator": "PCG64",
+    "baseline": [
+      {
+        "receiver": "No equalization",
+        "bits": 2000000,
+        "errors": 22940,
+        "ber": 0.01147,
+        "analytical_reference": 0.011375831287457873
+      },
+      {
+        "receiver": "Correct-feedback reference",
+        "bits": 2000000,
+        "errors": 872,
+        "ber": 0.000436,
+        "analytical_reference": 0.0004290603331968374
+      },
+      {
+        "receiver": "Decision-directed DFE",
+        "bits": 2000000,
+        "errors": 987,
+        "ber": 0.0004935,
+        "analytical_reference": null
+      }
+    ],
+    "noise_sweep": [
+      {
+        "sigma": 0.25,
+        "bits": 2000000,
+        "raw_errors": 8324,
+        "dfe_errors": 68,
+        "raw_ber": 0.004162,
+        "dfe_ber": 3.4e-05,
+        "raw_analytical": 0.004098773321093197,
+        "correct_feedback_analytical": 3.1671241833119965e-05
+      },
+      {
+        "sigma": 0.275,
+        "bits": 2000000,
+        "raw_errors": 14741,
+        "dfe_errors": 312,
+        "raw_ber": 0.0073705,
+        "dfe_ber": 0.000156,
+        "raw_analytical": 0.007280827625810562,
+        "correct_feedback_analytical": 0.00013825695781905789
+      },
+      {
+        "sigma": 0.3,
+        "bits": 2000000,
+        "raw_errors": 22940,
+        "dfe_errors": 987,
+        "raw_ber": 0.01147,
+        "dfe_ber": 0.0004935,
+        "raw_analytical": 0.011375831287457873,
+        "correct_feedback_analytical": 0.0004290603331968374
+      },
+      {
+        "sigma": 0.325,
+        "bits": 2000000,
+        "raw_errors": 32653,
+        "dfe_errors": 2444,
+        "raw_ber": 0.0163265,
+        "dfe_ber": 0.001222,
+        "raw_analytical": 0.016221591736255255,
+        "correct_feedback_analytical": 0.0010457463302387593
+      },
+      {
+        "sigma": 0.35,
+        "bits": 2000000,
+        "raw_errors": 43447,
+        "dfe_errors": 4954,
+        "raw_ber": 0.0217235,
+        "dfe_ber": 0.002477,
+        "raw_analytical": 0.02163490199433296,
+        "correct_feedback_analytical": 0.0021373669800862846
+      },
+      {
+        "sigma": 0.375,
+        "bits": 2000000,
+        "raw_errors": 55194,
+        "dfe_errors": 8904,
+        "raw_ber": 0.027597,
+        "dfe_ber": 0.004452,
+        "raw_analytical": 0.027446886412181185,
+        "correct_feedback_analytical": 0.0038303805675897395
+      },
+      {
+        "sigma": 0.4,
+        "bits": 2000000,
+        "raw_errors": 67236,
+        "dfe_errors": 14549,
+        "raw_ber": 0.033618,
+        "dfe_ber": 0.0072745,
+        "raw_analytical": 0.033519915173946827,
+        "correct_feedback_analytical": 0.006209665325776139
+      },
+      {
+        "sigma": 0.425,
+        "bits": 2000000,
+        "raw_errors": 79648,
+        "dfe_errors": 22022,
+        "raw_ber": 0.039824,
+        "dfe_ber": 0.011011,
+        "raw_analytical": 0.03975164137604127,
+        "correct_feedback_analytical": 0.009312790143701438
+      },
+      {
+        "sigma": 0.45,
+        "bits": 2000000,
+        "raw_errors": 92220,
+        "dfe_errors": 31146,
+        "raw_ber": 0.04611,
+        "dfe_ber": 0.015573,
+        "raw_analytical": 0.04607157184669143,
+        "correct_feedback_analytical": 0.013134145691021126
+      },
+      {
+        "sigma": 0.475,
+        "bits": 2000000,
+        "raw_errors": 104900,
+        "dfe_errors": 41738,
+        "raw_ber": 0.05245,
+        "dfe_ber": 0.020869,
+        "raw_analytical": 0.05243433808555866,
+        "correct_feedback_analytical": 0.017634203613372316
+      },
+      {
+        "sigma": 0.5,
+        "bits": 2000000,
+        "raw_errors": 117556,
+        "dfe_errors": 53612,
+        "raw_ber": 0.058778,
+        "dfe_ber": 0.026806,
+        "raw_analytical": 0.05881240027606812,
+        "correct_feedback_analytical": 0.022750131948179216
+      }
+    ],
+    "errors_after_incorrect_feedback": 115,
+    "analytical_raw": 0.011375831287457873,
+    "analytical_correct_feedback": 0.0004290603331968374,
+    "analytical_stationary_dfe": 0.0004908130628760308,
+    "article_default_parameters": true,
+    "article_expected_counts": [
+      22940,
+      872,
+      987
+    ],
+    "observed_counts": [
+      22940,
+      872,
+      987
+    ],
+    "article_count_check_passed": true,
+    "ffe_cascade": [
+      1.0,
+      0.0,
+      -0.16000000000000003
+    ],
+    "ffe_peak_normalized_cascade": [
+      0.7142857142857143,
+      0.0,
+      -0.11428571428571431
+    ],
+    "ffe_minimum_threshold_distance": 0.6
+  },
+  "section6_energy_accounting": [
+    {
+      "quantity": "Allocated operating power per lane",
+      "value": 1.0,
+      "unit": "W"
+    },
+    {
+      "quantity": "Transmitted rate per lane",
+      "value": 100.0,
+      "unit": "Gb/s"
+    },
+    {
+      "quantity": "Energy per transmitted bit",
+      "value": 10.0,
+      "unit": "pJ/bit"
+    },
+    {
+      "quantity": "Number of simultaneous lanes",
+      "value": 32,
+      "unit": "lanes"
+    },
+    {
+      "quantity": "Aggregate transmitted rate",
+      "value": 3.2,
+      "unit": "Tb/s"
+    },
+    {
+      "quantity": "Combined operating-power allocation",
+      "value": 32.0,
+      "unit": "W"
+    },
+    {
+      "quantity": "Assumed energy reduction",
+      "value": 2.0,
+      "unit": "pJ/bit"
+    },
+    {
+      "quantity": "Calculated saving per lane",
+      "value": 0.19999999999999998,
+      "unit": "W"
+    },
+    {
+      "quantity": "Calculated saving across all lanes",
+      "value": 6.3999999999999995,
+      "unit": "W"
+    }
+  ],
+  "generated_figures": [
+    "figure_02_channel_memory.png",
+    "figure_02_channel_memory.svg",
+    "section4_synthetic_channel_comparison.png",
+    "section4_synthetic_channel_comparison.svg",
+    "figure_07_dfe_sample_distributions.png",
+    "figure_07_dfe_sample_distributions.svg",
+    "figure_08_ber_vs_noise.png",
+    "figure_08_ber_vs_noise.svg"
+  ],
+  "generated_csv_tables": [
+    "section1_rate_comparison.csv",
+    "section2_symbol_cases.csv",
+    "figure02_samples.csv",
+    "section3_loss_allocation.csv",
+    "section3_timing_normalization.csv",
+    "section4_inverse_gain_comparison.csv",
+    "section4_assumed_magnitude_profiles.csv",
+    "section5_baseline_results.csv",
+    "figure07_histogram.csv",
+    "section5_noise_sweep.csv",
+    "section5_ffe_normalization.csv",
+    "section6_energy_accounting.csv"
+  ]
+}

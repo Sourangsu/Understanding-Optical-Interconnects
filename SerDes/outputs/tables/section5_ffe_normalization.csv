@@ -1,0 +1,4 @@
+case,transmit_peak,main_cursor,first_postcursor,second_postcursor,minimum_threshold_distance
+No transmit FFE,1.0,1.0,0.4,0.0,0.6
+Unnormalized two-tap FFE,1.4,1.0,0.0,-0.16000000000000003,0.84
+Same-peak two-tap FFE,1.0,0.7142857142857143,0.0,-0.11428571428571431,0.6

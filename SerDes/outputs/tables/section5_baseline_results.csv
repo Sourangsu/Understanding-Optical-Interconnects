@@ -1,0 +1,4 @@
+receiver,bits,errors,ber,analytical_reference
+No equalization,2000000,22940,0.01147,0.011375831287457873
+Correct-feedback reference,2000000,872,0.000436,0.0004290603331968374
+Decision-directed DFE,2000000,987,0.0004935,
